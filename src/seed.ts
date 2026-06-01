@@ -1126,6 +1126,12 @@ async function bootstrap() {
         user.profile = await profileRepository.save(profileRepository.create({ userId: user.id }));
       }
 
+      // Seeded users have no preferred name; clear any handle left by older seeds.
+      if (user.preferredUsername) {
+        user.preferredUsername = '';
+        await userRepository.save(user);
+      }
+
       const p = user.profile;
       p.userType = persona.userType;
       p.program = persona.program;
