@@ -72,6 +72,10 @@
     "vite-tsconfig-paths": "^5.1.4",
     "webpack": "^5.99.6"
   },
+  "resolutions": {
+    "body-parser": "^2.4.0",
+    "multer": "^2.5.0"
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
